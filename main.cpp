@@ -29,7 +29,23 @@ public:
 
         return temp;
     }
+
+    Grade operator-(Grade g);
 };
+
+//2, Operator function outside the class
+
+Grade Grade::operator- (Grade g){
+
+    Grade temp1;
+    temp1.inGrade = inGrade - g.inGrade;
+    temp1.outGrade = outGrade - g.outGrade;
+
+    return temp1;
+
+}
+
+
 int main() {
 
     Grade g1 = Grade(20, 30);
@@ -38,5 +54,10 @@ int main() {
     Grade g3 = g1 + g2;
     g3.display();
 
+    Grade g4 = Grade(12, 11);
+    Grade g5 = Grade(22, 44);
+
+    Grade g6 = g4 - g5;
+    g6.display();
     return 0;
 }
